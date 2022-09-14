@@ -1,0 +1,28 @@
+<resources>
+
+    <string name="applovin_mrec">5b55d8cf6dfe820d</string>
+    <string name="applovin_banner">64b1bd84ca61651c</string>
+    <string name="applovin_interstitial">f31e7be04b4c93cc</string>
+
+    <string name="app_name">হিমু সমগ্র</string>
+    <string name="com_name">মেইজ আইটি</string>
+    <string name="a_product_of">নির্মাণ শৈলীতে</string>
+    <string name="story_publish_date">প্রকাশনা %1$s সাল</string>
+    <string name="last_read_story">সর্বশেষ\nপঠিত গল্প</string>
+    <string name="read_next_story">পরবর্তী\nগল্প পড়ুন</string>
+    <string name="all_stories">সকল গল্প</string>
+    <string name="exit_confirmation">প্রস্থান নিশ্চিতকরণ</string>
+    <string name="are_you_sure_about_exit">আপনি কি নিশ্চিত যে আপনি অ্যাপ থেকে বের হয়ে যেতে চান?</string>
+    <string name="cancel">বাদ দিন</string>
+    <string name="exit">বেরিয়ে যান</string>
+    <string name="character_size">অক্ষরের আকার</string>
+    <string name="line_height">লাইনের উচ্চতা</string>
+    <string name="restore">আগের মতো করুন</string>
+    <string name="dismiss">বন্ধ করুন</string>
+    <string name="episode">পর্ব</string>
+    <string name="ads">Ads</string>
+    <string name="wait_a_while">একটু অপেক্ষা করুন</string>
+    <string name="update_snooze_message">আগামী %1$s দিন আর জিজ্ঞাসা করবেন না</string>
+    <string name="loading_ad_msg">অ্যাড লোড হচ্ছে</string>
+
+</resources>

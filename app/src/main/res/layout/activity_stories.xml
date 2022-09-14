@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.gw.swipeback.SwipeBackLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:directionMode="left"
+        app:maskAlpha="125"
+        app:swipeBackFactor="0.3">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/primary"
+                    app:collapsedTitleTextAppearance="@style/Theme.Toolbar.Collapsed"
+                    app:contentScrim="@color/primary"
+                    app:expandedTitleMarginStart="32dp"
+                    app:expandedTitleTextAppearance="@style/Theme.Toolbar.Expanded"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                    app:title="সকল গল্প">
+
+                    <com.google.android.material.appbar.MaterialToolbar
+                        android:id="@+id/storiesToolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?actionBarSize"
+                        app:layout_collapseMode="pin"
+                        app:navigationIcon="@drawable/ic_fi_rr_arrow_left"
+                        app:navigationIconTint="@color/white" />
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#E9E9E9"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+                <LinearLayout
+                    android:id="@+id/storiesBannerContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="vertical"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/storiesRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/storiesBannerContainer"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:clipToPadding="false"
+                    android:paddingTop="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </RelativeLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </com.gw.swipeback.SwipeBackLayout>
+
+</layout>

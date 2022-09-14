@@ -1,0 +1,19 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url 'https://artifacts.applovin.com/android' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10"
+        classpath 'com.google.gms:google-services:4.3.13'
+        //noinspection GradleDynamicVersion
+        classpath "com.applovin.quality:AppLovinQualityServiceGradlePlugin:+"
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

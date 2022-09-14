@@ -1,0 +1,88 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+    id 'applovin-quality-service'
+}
+
+applovin {
+    apiKey = APPLOVIN_API_KEY
+}
+
+android {
+    compileSdk 33
+    defaultConfig {
+        applicationId "com.mazeit.himusomogro"
+        minSdk 21
+        targetSdk 33
+        versionCode 13
+        versionName "4.50"
+        manifestPlaceholders.APPLOVIN_SDK_KEY = APPLOVIN_SDK_KEY
+    }
+    buildFeatures {
+        dataBinding true
+    }
+    signingConfigs {
+        release {
+            storeFile rootProject.file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.9.0'
+    //noinspection GradleDependency
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    // ObservableScrollView
+    implementation 'com.github.ksoichiro:android-observablescrollview:1.6.0'
+
+    // Room database
+    implementation "androidx.room:room-ktx:2.4.3"
+    kapt "androidx.room:room-compiler:2.4.3"
+
+    // AndroidX Lifecycle
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+
+    // Kotlin Coroutine
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
+    // AndroidX Preference
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+
+    // Swipe back library
+    implementation 'com.gongwen:swipeback:1.0.2'
+
+    // Google Play core library
+    implementation 'com.google.android.play:core:1.10.3'
+    implementation 'com.google.android.play:core-ktx:1.8.1'
+
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
+
+    // AppLovin
+    //noinspection GradleDynamicVersion
+    implementation 'com.applovin:applovin-sdk:+'
+}

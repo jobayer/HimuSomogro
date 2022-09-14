@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.gw.swipeback.SwipeBackLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        app:directionMode="left"
+        app:maskAlpha="125"
+        app:swipeBackFactor="0.3">
+
+        <RelativeLayout
+            android:id="@+id/readingRoot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:background="@color/white">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/readingToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/dark"
+                android:elevation="0dp"
+                app:navigationIcon="@drawable/ic_fi_rr_arrow_small_left"
+                app:navigationIconTint="@color/white"
+                app:title="@string/app_name"
+                app:titleTextColor="@color/white" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/readingProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_below="@id/readingToolbar"
+                android:layout_centerHorizontal="true"
+                android:max="100"
+                app:indicatorColor="@color/secondary"
+                app:trackCornerRadius="16dp" />
+
+            <LinearLayout
+                android:id="@+id/readingTopBannerContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/readingProgressBar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical"
+                android:visibility="gone" />
+
+            <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
+                android:id="@+id/readingContentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/readingBottomBannerContainer"
+                android:layout_below="@id/readingTopBannerContainer"
+                android:layout_centerHorizontal="true"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:scrollbars="none">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/readingContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="@color/dark"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/lohit" />
+
+            </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
+
+            <LinearLayout
+                android:id="@+id/readingBottomBannerContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                android:visibility="gone" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/readingNavigatePrevious"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@null"
+                app:backgroundTint="@color/secondary"
+                app:fabCustomSize="30dp"
+                app:srcCompat="@drawable/ic_fi_rr_arrow_small_left"
+                app:tint="@color/white" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/readingNavigateNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@null"
+                app:backgroundTint="@color/secondary"
+                app:fabCustomSize="30dp"
+                app:srcCompat="@drawable/ic_fi_rr_arrow_small_right"
+                app:tint="@color/white"
+                tools:ignore="RelativeOverlap" />
+
+        </RelativeLayout>
+
+    </com.gw.swipeback.SwipeBackLayout>
+
+</layout>

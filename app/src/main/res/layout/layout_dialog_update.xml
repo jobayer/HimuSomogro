@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/security" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="12dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="3dp"
+                android:gravity="center"
+                android:text="অ্যাপ আপডেট"
+                android:textColor="@color/primary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/ador" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="অ্যাপের নতুন আপডেট প্রয়োজন। অ্যাপের সর্বশেষ ভার্সন ব্যবহার করার মাধ্যমে সবসময় ত্রুটিবিহীন অ্যাপ উপভোগ করুন। প্রতিটি আপডেট এর মাধ্যমে আমরা অ্যাপ এর বিদ্যমান সমস্যাগুলো সমাধান করার চেষ্টা করি এবং/অথবা নিত্যনতুন ফিচারস নিয়ে আসি। তাই এখনই আপনার অ্যাপটি আপডেট করে নিন। ধন্যবাদ।"
+                android:textColor="@color/dark"
+                app:fontFamily="@font/ador" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/dialogUpdateSnoozeChkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="আগামী ০ দিন আর জিজ্ঞাসা করবেন না"
+                android:textColor="@color/dark" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/dialogUpdateCancelBtn"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:text="পরে করবো"
+                    android:textColor="@color/red"
+                    app:fontFamily="@font/ador" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/dialogUpdateUpdateBtn"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="আপডেট করুন"
+                    app:backgroundTint="@color/green"
+                    app:fontFamily="@font/ador" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
